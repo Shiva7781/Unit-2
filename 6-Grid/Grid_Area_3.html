@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid_Area</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(3, 150px);
+        width: 80%;
+        margin: auto;
+        margin-top: 5%;
+        grid-template-areas:
+        "a a a a a a b b b b b b"
+        "c c c c d d d d d d d d"
+        "e e e e e e e e e e e e";
+        grid-gap: 30px;
+      }
+
+      #container > div {
+        color: white;
+        background-color: darkslategray;
+        display: flex;
+        align-items: center;
+        padding-left: 10%;
+        border-radius: 10px;
+        /* border: 1px solid red; */
+      }
+
+      #container > div:nth-child(1) {
+        grid-area: a;
+      }
+
+      #container > div:nth-child(2) {
+        grid-area: b;
+      }
+
+      #container > div:nth-child(3) {
+        grid-area: c;
+      }
+
+      #container > div:nth-child(4) {
+        grid-area: d;
+      }
+
+      #container > div:nth-child(5) {
+        grid-area: e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div><h1>A</h1></div>
+      <div><h1>B</h1></div>
+      <div><h1>C</h1></div>
+      <div><h1>D</h1></div>
+      <div><h1>E</h1></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karlo</title>
+  </head>
+  <body>
+    <form id="myforn">
+      <input id="name" type="text" placeholder="enter name" />
+      <input id="date" type="number" placeholder="enter date" />
+      <input id="ticket" type="number" placeholder="enter ticket number" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+<script>
+  document.querySelector("myform").addEventListener("submit", mySubfunction);
+
+  function mySubFunction() {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+
+    var date = document.getElementById("date").value;
+
+    var ticket = document.getElementById("ticket").value;
+
+    document.querySelector("h3").textContent = name;
+    JSON.stringify(localStorage)("name", name);
+
+    document.querySelector("h3").textContent = date;
+    JSON.stringify(localStorage)("date", date);
+
+    document.querySelector("h3").textContent = ticket;
+    JSON.stringify(localStorage)("ticket", ticket);
+  }
+</script>
+

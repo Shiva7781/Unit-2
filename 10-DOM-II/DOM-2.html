@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-II</title>
+    <style>
+      button {
+        padding: 10px;
+        margin: 10px;
+        color: white;
+        border: 0;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      /* button:nth-child(1) {
+        background-color: rgb(13, 110, 253);
+      }
+      button:nth-child(2) {
+        background-color: rgb(108, 117, 125);
+      }
+      button:nth-child(3) {
+        background-color: rgb(25, 135, 84);
+      }
+      button:nth-child(4) {
+        background-color: rgb(220, 53, 69);
+      }
+      button:nth-child(5) {
+        background-color: rgb(255, 192, 8);
+      }
+      button:nth-child(6) {
+        background-color: rgb(17, 202, 240);
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <button>Primary</button>
+    <button>Secondary</button>
+    <button>Success</button>
+    <button>Danger</button>
+    <button>Warning</button>
+    <button>Info</button> -->
+  </body>
+</html>
+
+<script>
+  // console.log(document);
+
+  var buttons = [
+    { name: "Primary", bgColor: "rgb(13,110,253)" },
+    { name: "Secondary", bgColor: "rgb(108,117,125)" },
+    { name: "Success", bgColor: "rgb(25,135,84)" },
+    { name: "Danger", bgColor: "rgb(220,53,69)" },
+    { name: "Warning", bgColor: "rgb(255,192,8)" },
+    { name: "Info", bgColor: "rgb(17,202,240)" },
+  ];
+
+  buttons.map(function (elem) {
+    var btn = document.createElement("button");
+    btn.textContent = elem.name;
+    btn.style.backgroundColor = elem.bgColor;
+    document.querySelector("body").append(btn);
+  });
+
+  // var btn1 = document.createElement("button");
+  // var btn2 = document.createElement("button");
+  // var btn3 = document.createElement("button");
+  // var btn4 = document.createElement("button");
+  // var btn5 = document.createElement("button");
+  // var btn6 = document.createElement("button");
+
+  // btn1.textContent = "Primary";
+  // btn2.textContent = "Secondary";
+  // btn3.textContent = "Success";
+  // btn4.textContent = "Danger";
+  // btn5.textContent = "Warning";
+  // btn6.textContent = "Info";
+
+  // btn1.style.backgroundColor = "rgb(13, 110, 253)";
+  // btn2.style.backgroundColor = "rgb(108, 117, 125)";
+  // btn3.style.backgroundColor = "rgb(25, 135, 84)";
+  // btn4.style.backgroundColor = "rgb(220, 53, 69)";
+  // btn5.style.backgroundColor = "rgb(255, 192, 8)";
+  // btn6.style.backgroundColor = "rgb(17, 202, 240)";
+
+  document.querySelector("body").append(btn1, btn2, btn3, btn4, btn5, btn6);
+</script>

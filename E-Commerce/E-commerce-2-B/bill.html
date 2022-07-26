@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loginPage">
+        <h1>PAYMENT</h1>
+        <h2>Enter CardHolder's Name</h2>
+        <input type="text"  id="emailid">
+        <h2>Enter CVV</h2>
+        <input type="password" id="userpwd">
+        <h2>Enter Expiry Date</h2>
+        <input type="date" id="userpw2">
+        <h3>By continuing, total product's amount will be deducted from your Account </h3>
+        <div class="inputOTP"></div>
+        <button type="submit"  id="signinBtn">PAY</button>
+       
+    
+        <!-- <h3><input type="checkbox" name="" id="checkbox">Keep me signed In</h3>
+        <div class="newtomyntra">New to Myntra</div>
+        <button type="submit" value="Sign-Up" id="signupBtn" onclick="SignUp()">Create Myntra Account</button>
+        <hr> -->
+    
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#signinBtn").addEventListener('click', function () {
+
+var otp = document.createElement("input");
+
+
+
+
+otp.className = "otp";
+otp.setAttribute("type", "password");
+otp.setAttribute("placeholder", "Enter OTP")
+document.querySelector(".inputOTP").append(otp);
+// var contniue = document.querySelector("#signinBtn").textContent = "Continue";
+// contniue.addEventListener("click", function () {
+//     contTopay();
+// })
+
+// document.querySelector("#signinBtn").setAttribute("id", 'continue');
+// document.querySelector("#signinBtn").textContent = "Continue";
+
+})
+
+
+
+document.querySelector("#signinBtn").addEventListener("click", function () {
+// console.log("enter otp first");
+var otpvalue = document.querySelector(".otp").value;
+
+var cardholdername = document.querySelector("#emailid").value;
+var cvv = document.querySelector("#userpwd").value;
+var expirydate = document.querySelector("#userpw2").value;
+// var cardholdername = document.querySelector("#emailid").value;
+
+
+
+if (otpvalue == "1234" && cardholdername.length !== 0 && cvv.length !== 0 && expirydate.length !== 0) {
+    alert('Successfully Ordered!')
+    location.href = "success.html"
+}
+else {
+    
+    alert("Error!")
+
+  
+}
+
+})
+
+
+function contTopay() {
+
+}
+</script>

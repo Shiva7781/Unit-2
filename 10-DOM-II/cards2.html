@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>cards</title>
+    <style>
+        #container {
+            width: 80%;
+            height: 350px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: auto;
+            grid-gap: 10px;
+            /* border: 1px solid black; */
+        }
+
+        #container>div {
+            /* border: 1px solid red; */
+            height: 90%;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            margin-top: 40px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h5 {
+            margin-left: 15px;
+            color: rgb(73, 73, 73);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3 {
+            margin-left: 15px;
+
+        }
+
+        h6 {
+            margin-left: 80px;
+            margin-top: -36px;
+            color: grey;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var cards = [
+        {
+            name: "LATEST MEN'S SNEAKER",
+            image: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+            price: "$25.00",
+            discount: "$95.00"
+        },
+
+        {
+            name: "LATEST MEN'S SNEAKER",
+            image: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+            price: "$25.00",
+            discount: "$95.00"
+        },
+
+        {
+            name: "LATEST MEN'S SNEAKER",
+            image: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+            price: "$25.00",
+            discount: "$95.00"
+        },
+
+        {
+            name: "LATEST MEN'S SNEAKER",
+            image: "https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+            price: "$25.00",
+            discount: "$95.00"
+        }
+
+    ]
+
+    cards.map(function (item) {
+
+        var box = document.createElement("div")
+
+        var avatar = document.createElement("img")
+        avatar.setAttribute("src", item.image)
+
+        var title = document.createElement("h5")
+        title.textContent = item.name
+
+        var value = document.createElement("h3")
+        value.textContent = item.price
+
+        var offer = document.createElement("h6")
+        offer.textContent = item.discount
+
+        box.append(avatar, title, value, offer)
+
+        document.querySelector("#container").append(box)
+    })
+</script>

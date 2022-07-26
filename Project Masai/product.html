@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    
+    <style>
+
+     #maincartcontainer {
+         display: flex;
+     }
+     #leftcontainer {
+         margin-left: 10%;
+     }
+#leftcontainer div {
+    margin: 1%;
+    margin-top: 10%;
+    width: 100%;
+    margin-left: 5%;
+}
+#leftcontainer >div >div {
+    margin: auto;
+    margin-left: 5%;
+}
+   #rightcontainer{
+       margin-left: 4%;
+       margin-top: 2.5%;
+   }
+   #leftcontainer img {
+       margin: 1%;
+   }
+   #rightcontainer h4{
+       color:rgb(231, 61, 9);
+       margin-top: 2%;
+   }
+   #rightcontainer >div >div {
+       display: flex;
+       color: red;
+       font-size: 20px;
+       margin-top: 1%;
+   }
+
+    </style>
+</head>
+<body>
+
+    <!-- <p class="top">Furniture / Bedroom Furniture / Beds</p> -->
+
+    <!-- <div class="product">
+        <div class="images">
+            <div id="slider">
+                <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/61141aac4c39eb90e24011d5ddce0ac8ccc8efd6/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg?imwidth=480&impolicy=medium"  >
+            </div>
+            <div class="thumbnail">
+                <div class="thumb active">
+                    <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/bcd11e7a95685878aa9038e3d2bac1c4264cfba1/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg" >
+                </div>
+                <div class="thumb">
+                    <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/b0a147431b9f9eb1c67440b25976a092d843e350/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg" >
+                </div>
+                <div class="thumb">
+                    <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/557338f6757bebf1c2d305f0fd23deca2f38154d/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg" >
+                </div>
+                <div class="thumb">
+                    <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/6fad667b00c15b6be95ce5f3e01d946bcc582b7e/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg" >
+                </div>
+                <div class="thumb">
+                    <img src="https://ak1.ostkcdn.com/images/products/is/images/direct/f63693446a81e82ff43b9763aff0c03cf6353ae7/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg" >
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="info">
+            <p class="heading">Futzca Modern L-shaped Compact Convertible Sectional Sofa w/ Reversible Chaise Grey</p>
+           <h3>★ ★ ★ ★ ☆</h3>
+
+            <p class="price">Sale Starts at INR 43755.77</p>
+            <h4 class="title">Color(2)</h4>
+            <div class="colors">
+                <span class="color khaki" ></span>
+                <span class="color gray"></span>
+               
+            </div>
+            <select  class="qty">
+                <option>Quantity:1</option>
+                <option>Quantity:2</option>
+                <option>Quantity:3</option>
+                <option>Quantity:4</option>
+                <option>Quantity:5</option>
+                <option>Quantity:6</option>
+                <option>Quantity:7</option>
+            </select>
+            <a onclick="window.location.href='cart.html'" class="cart">Add to cart</a>
+            <p style="margin-top: 10%; font-size: 12px;">ITEM# 38108004</p>
+            <a href="" class="fav">Favorites</a>
+         </div>
+        
+    </div> -->
+
+
+    <div id="maincartcontainer">
+
+        <div id="leftcontainer"></div>
+        <div id="rightcontainer"></div>
+
+ </div> 
+
+</body>
+</html>
+
+
+<script>
+
+var shopping = [
+    {
+      rating: " ★ ★ ★ ★ ☆ ",
+      price: "Sale Starts at INR",
+      rupee: 13273,
+      saving: "15% Savings",
+      name: "Sleep Sync Regatta Linen-upholstered 3-panel Platform Bed Frame",
+      image:"https://ak1.ostkcdn.com/images/products/is/images/direct/61141aac4c39eb90e24011d5ddce0ac8ccc8efd6/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg?imwidth=480&impolicy=medium",
+        image1:"https://ak1.ostkcdn.com/images/products/is/images/direct/47dc7602ff77d1cedde2821f1ef4e92d328079f0/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        image2:"https://ak1.ostkcdn.com/images/products/is/images/direct/f2b315feb6a10074671c6c70cc4a87b4308ff1da/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        image3:"https://ak1.ostkcdn.com/images/products/is/images/direct/2c8451c7b8ac3ead85c4e16c1075c53e94b13aac/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        image4:"https://ak1.ostkcdn.com/images/products/is/images/direct/35de08352add154b19d0e4b8cfe783d61ea5e498/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        image5:"https://ak1.ostkcdn.com/images/products/is/images/direct/ba79c161e6d8a496c035fd3f803833fe6727d334/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        image6:"https://ak1.ostkcdn.com/images/products//is/images/direct/47dc7602ff77d1cedde2821f1ef4e92d328079f0/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        image7:"https://ak1.ostkcdn.com/images/products//is/images/direct/75050c0cb464649c4a5f5cb16032cbdcbe0fd5d5/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg",
+        opt:"12345",
+    },
+  ];
+
+  shopping.map(function (item) {
+    var box1 = document.createElement("div");
+
+    var boxleft = document.createElement("div");
+
+    var avtar = document.createElement("img");
+    avtar.setAttribute("src", item.image);
+
+
+    var boxleft1 = document.createElement("div");
+    var avtar1 = document.createElement("img");
+    avtar1.setAttribute("src", item.image1);
+
+    var avtar2 = document.createElement("img");
+    avtar2.setAttribute("src", item.image2);
+
+    var avtar3 = document.createElement("img");
+    avtar3.setAttribute("src", item.image3);
+
+    var avtar4 = document.createElement("img");
+    avtar4.setAttribute("src", item.image4);
+
+    var avtar5 = document.createElement("img");
+    avtar5.setAttribute("src", item.image5);
+
+
+    var boxright = document.createElement("div");
+
+    var title = document.createElement("p");
+    title.textContent = item.name;
+
+    var rating = document.createElement("h4");
+    rating.textContent = item.rating;
+
+
+    var sale = document.createElement("div");
+
+    var price = document.createElement("h5");
+    price.textContent = item.price;
+
+    var rupee = document.createElement("h5");
+    rupee.textContent = item.rupee;
+
+
+    var colo = document.createElement("div");
+    var rightavtar1 = document.createElement("img");
+    rightavtar1.setAttribute("src", item.image6);
+
+    var rightavtar2 = document.createElement("img");
+    rightavtar2.setAttribute("src", item.image7);
+
+
+    var qtyadd = document.createElement("div");
+
+    var opt = document.createElement("select");
+    opt.textContent = item.opt;
+
+
+    var add = document.createElement("button");
+    add.textContent = "Add to Cart";
+
+
+    sale.append(price,rupee);
+    colo.append(rightavtar1,rightavtar2);
+    qtyadd.append(opt,add);
+
+    boxright.append(title,rating,sale,colo,qtyadd);
+    boxleft1.append(avtar1,avtar2,avtar3,avtar4,avtar5);
+
+    boxleft.append(avtar,boxleft1);
+
+    document.querySelector("#leftcontainer").append(boxleft);
+    document.querySelector("#rightcontainer").append(boxright);
+  });
+
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>We_HOF-7</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 100px 200px;
+        grid-template-areas:
+          "n n n n n n n n n n n n"
+          "b1 b1 b1 b2 b2 b2 b3 b3 b3 b4 b4 b4";
+        grid-gap: 20px;
+      }
+      .nav {
+        grid-area: n;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        background-color: yellow;
+      }
+      .box1 {
+        grid-area: b1;
+        padding-left: 7%;
+        color: grey;
+        background-color: red;
+      }
+      .box2 {
+        grid-area: b2;
+        padding-left: 7%;
+        color: grey;
+        background-color: green;
+      }
+      .box3 {
+        grid-area: b3;
+        padding-left: 7%;
+        color: grey;
+        background-color: blue;
+      }
+      .box4 {
+        grid-area: b4;
+        padding-left: 7%;
+        color: gray;
+        background-color: darkgray;
+      }
+
+      /* small screen */
+      @media only screen and (max-width: 320px) {
+        #container {
+          grid-template-rows: 75px 100px 100px 100px 100px;
+          grid-template-areas:
+            "n n n n n n n n n n n n"
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+            "b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+            "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3";
+        }
+      }
+
+      /* medium screen */
+      @media only screen and (min-width: 321px) and (max-width: 720px) {
+        #container {
+          grid-template-rows: 100px 200px 200px;
+          grid-template-areas:
+            "n n n n n n n n n n n n"
+            "b1 b1 b1 b1 b1 b1 b3 b3 b3 b3 b3 b3"
+            "b2 b2 b2 b2 b2 b2 b4 b4 b4 b4 b4 b4";
+          /* grid-gap: 20px; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="nav"><h1>Navigation</h1></div>
+      <div class="box1"><h2>Box1</h2></div>
+      <div class="box2"><h2>Box2</h2></div>
+      <div class="box3"><h2>Box3</h2></div>
+      <div class="box4"><h2>Box4</h2></div>
+    </div>
+  </body>
+</html>

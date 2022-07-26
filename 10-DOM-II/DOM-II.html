@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-II-We</title>
+    <style>
+      button {
+        padding: 10px;
+        margin: 10px;
+        color: white;
+        border: 0;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+</html>
+
+<script>
+
+  var buttons = [
+    { name: "Primary", bgColor: "rgb(13,110,253)" },
+    { name: "Secondary", bgColor: "rgb(108,117,125)" },
+    { name: "Success", bgColor: "rgb(25,135,84)" },
+    { name: "Danger", bgColor: "rgb(220,53,69)" },
+    { name: "Warning", bgColor: "rgb(255,192,8)" },
+    { name: "Info", bgColor: "rgb(17,202,240)" },
+  ];
+
+  buttons.map(function (elem) {
+    var btn = document.createElement("button");
+    btn.textContent = elem.name;
+    btn.style.backgroundColor = elem.bgColor;
+    document.querySelector("body").append(btn);
+  });
+
+  document.querySelector("body").append(btn1, btn2, btn3, btn4, btn5, btn6);
+</script>

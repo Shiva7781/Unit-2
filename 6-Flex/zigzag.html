@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex_ZigZag</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #container{
+            height: 710px;
+            width: 67%;
+            /* width: 1200px; */
+            margin:auto;
+            display: flex;
+            background-color: white;
+            /* border: 1px solid red; */
+        }
+
+        #container > #BoxM{
+            width: 80%;
+            height: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid gold; */
+        }
+
+        #BoxM > .box{
+            width: 90%;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            /* border: 1px solid blue; */
+        }
+
+        .box > div{
+            width: 20%;
+            height: 80%;
+            display: flex;
+            margin: 3%;
+            border-radius: 3%;
+            background: rgb(33,120,103);
+            /* border: 1px solid red; */
+        }
+        
+        .box > .boxR{
+            flex-grow: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="BoxM">
+            <div class="box">
+                <div></div>
+                <div class="boxR"></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div class="boxR"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div class="boxR"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

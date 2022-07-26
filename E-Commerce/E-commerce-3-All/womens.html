@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens Myntra</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        .mensContainer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        #flex {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #flex>p:nth-child(2) {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <div><img
+                src="https://gumlet.assettype.com/afaqs%2F2021-01%2F15f5f827-8e29-4520-af8d-a0f353b8da17%2Fimages.png?auto=format&q=35&w=1200"
+                width="80px" height="50px"></div>
+        <div class="menspage">MEN</div>
+        <div >WOMEN</div>
+        <div>KIDS</div>
+        <div>HOME&LIVING</div>
+        <div>BEAUTY</div>
+        <div>STUDIO</div>
+        <div><input type="search" placeholder="Search for Product,Brands and more" id="search"></div>
+        <div class="bag">
+            <div>Profile</div>
+            <div class="wishlist">WishList</div>
+            <div>Bag</div>
+        </div>
+
+    </div>
+    <select name="" id="PriceSorting" onchange="PriceSort()">
+        <option value="">Select Price</option>
+        <option value="high">High To Low</option>
+        <option value="low">Low To High</option>
+    </select>
+
+    <select name="" id="BrandSort" onchange="BrandSorting()">
+        <option value="">Select Brand</option>
+        <option value="Reebok">Reebok</option>
+        <option value="Nike">Nike</option>
+
+    </select>
+
+
+
+
+    <div class="mensContainer">
+
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+    var cartItems = JSON.parse(localStorage.getItem("CartItem")) || [];
+
+var womensData = JSON.parse(localStorage.getItem("womensData"));
+
+displayData(womensData);
+
+function PriceSort() {
+  var selected = document.querySelector("#PriceSorting").value;
+  console.log(selected);
+
+  if (selected == "high") {
+
+    womensData.sort((a, b) => {
+      return Number( b.price) - Number(a.price);
+    })
+
+  }
+  if (selected == "low") {
+    womensData.sort((a, b) => {
+      return a.price - b.price;
+    });
+    
+  }
+
+  displayData(womensData)
+
+}
+ 
+////////////sorting by brand name
+//////////////////////
+///////////////////
+function BrandSorting() {
+  var selectedBrand = document.querySelector("#BrandSort").value;
+  console.log(selectedBrand);
+  var filteredList = womensData.filter((ele) => {
+    return ele.brandName == selectedBrand;
+  });
+
+  displayData(filteredList);
+}
+
+
+
+
+        // console.log(womensData);
+function displayData(womensData) {
+  document.querySelector(".mensContainer").textContent = "";
+  womensData.map(function (data) {
+    
+            var div = document.createElement("div");
+            //img,name,price,strikedoffprice
+
+            // image creation
+            var image = document.createElement("img");
+            image.setAttribute("src", data.image_url);
+
+            // name creation
+
+            var productname = document.createElement("p");
+            productname.textContent = data.name;
+
+            // price creation
+
+            var div2 = document.createElement("div");
+            div2.setAttribute("id", "flex");
+
+            var p1 = document.createElement("p");
+            p1.textContent = data.price;
+
+            var p2 = document.createElement("p");
+            p2.textContent = data.strikedoffprice;
+            // p2.style.textDecoration = "line-through";
+
+            div2.append(p1, p2);
+
+            // add to cart button creation
+
+            var btn = document.createElement("button");
+          btn.textContent = "Add To Cart";
+           btn.addEventListener("click", function () {
+            addToCart(data);
+          })
+
+            //append
+            div.append(image, productname, div2, btn);
+
+          var cont = document.querySelector(".mensContainer");
+          cont.append(div);
+            
+        });
+
+     }
+        
+
+document.querySelector('.wishlist').addEventListener('click', function () {
+  location.href = "carts.html";
+})
+        
+
+function addToCart(data) {
+  cartItems.push(data);
+  localStorage.setItem("cartItem", JSON.stringify(cartItems));
+  alert('Added successFully!')
+  
+}
+
+document.querySelector(".menspage").addEventListener("click", function () { 
+    location.href = "mens.html"
+})
+</script>
+
+<script>
+    
+</script>
+<!--  -->
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOF-6</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 100px 150px 150px 150px 150px;
+        grid-template-areas:
+          "n n n n n n n n n n n n"
+          "L L L L L L L L b1 b1 b1 b1"
+          "L L L L L L L L b2 b2 b2 b2"
+          "L L L L L L L L b3 b3 b3 b3";
+        grid-gap: 20px;
+      }
+      .nav {
+        grid-area: n;
+        padding-left: 3%;
+        display: flex;
+        align-items: center;
+        background-color: yellow;
+      }
+      .Lbox {
+        grid-area: L;
+        padding-left: 3%;
+        color: grey;
+        background-color: red;
+      }
+      .Rbox1 {
+        grid-area: b1;
+        padding-left: 3%;
+        color: grey;
+        background-color: green;
+      }
+      .Rbox2 {
+        grid-area: b2;
+        padding-left: 3%;
+        color: grey;
+        background-color: green;
+      }
+      .Rbox3 {
+        grid-area: b3;
+        padding-left: 3%;
+        color: grey;
+        background-color: green;
+      }
+
+      /* small screen */
+      @media only screen and (max-width: 320px) {
+        #container {
+          grid-template-rows: 50px 200px 100px 75px 100px;
+          grid-template-areas:
+            "n n n n n n n n n n n n"
+            "L L L L L L L L L L L L"
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+            "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3";
+        }
+      }
+
+      /* medium screen */
+      @media only screen and (min-width: 321px) and (max-width: 720px) {
+        #container {
+          grid-template-rows: 75px 300px 150px;
+          grid-template-areas:
+            "n n n n n n n n n n n n"
+            "L L L L L L L L L L L L"
+            "b1 b1 b1 b1 b2 b2 b2 b2 b3 b3 b3 b3";
+          /* grid-gap: 20px; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="nav"><h1>Navigation</h1></div>
+      <div class="Lbox"><h2>LEFT BOX</h2></div>
+      <div class="Rbox1"><h2>RIGHT BOX 1</h2></div>
+      <div class="Rbox2"><h2>RIGHT BOX 2</h2></div>
+      <div class="Rbox3"><h2>RIGHT BOX 3</h2></div>
+    </div>
+  </body>
+</html>

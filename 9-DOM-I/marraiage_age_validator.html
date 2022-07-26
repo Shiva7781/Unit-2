@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Marraige-age</title>
+</head>
+
+<body>
+    <select id="gender">
+        <option value="--">--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <input type="number" id="yob" placeholder="enter year of birth">
+    <button onclick="checkage()">Click to Confirm</button>
+</body>
+
+</html>
+
+
+<script>
+
+    function checkage() {
+        var x = document.querySelector("#yob").value
+        var age = 2022 - x
+        if (age >= 21) {
+
+            alert("Eligible for Marraige")
+        }
+        else {
+
+            alert("Not eligible")
+        }
+    }
+</script>

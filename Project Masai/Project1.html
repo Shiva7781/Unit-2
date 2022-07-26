@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project1</title>
+  <link rel="stylesheet" href="project1.css" />
+</head>
+
+<body>
+  <div>
+    <p class="top">Furniture / Bedroom Furniture / Beds</p>
+
+    <h1>Beds</h1>
+
+    <div id="container">
+      <div class="left">
+        <p>Platform Beds</p>
+        <p>Storage Beds</p>
+        <p>Panel Beds</p>
+        <p>Daybeds</p>
+        <p>Sleigh Beds</p>
+        <p>Canopy Beds</p>
+        <a href="https://www.overstock.com/Home-Garden/Beds/On-Sale,/sale,/2013/subcat.html" target="_blank">Shop All
+          Beds on Sale</a>
+      </div>
+
+      <div class="right">
+        <img src="https://ak1.ostkcdn.com/img/mxc/01102022_HB_INTL_4.svg?imwidth=1920" alt="pop" />
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>Shop by Size</h2>
+    <div id="container1"></div>
+  </div>
+  <div>
+    <h2>Shop by Design</h2>
+    <div id="container2"></div>
+  </div>
+  <div>
+    <h2>Shop by Feature</h2>
+    <div id="container3"></div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  var Size_1 = [
+    {
+      name: "Twin",
+      image:
+        "https://ak1.ostkcdn.com/images/products/14538678/Furniture-of-America-Ralen-Contemporary-Tufted-Linen-like-Wingback-Platform-Bed-8afe35e3-46a3-4448-9325-922c515a978a.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Twin XL",
+      image:
+        "https://ak1.ostkcdn.com/images/products/10735474/ZACK-Collection-Gray-Eco-leather-XL-Twin-Bed-by-Casabianca-Home-a061cf09-276f-4e43-a065-761b0e32be65.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Full / Double",
+      image:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/071b82f911cb96a94aa34de283e01e0a7b2657fb/VECELO-Full-Twin-size-Victorian-Metal-Platform-Bed.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Queen",
+      image:
+        "https://ak1.ostkcdn.com/images/products/14047250/Virgil-Upholstered-Tufted-Fabric-Queen-size-Bed-Set-by-Christopher-Knight-Home-2f191316-d798-4c20-8cdf-1f3b72b26d9c.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "King",
+      image:
+        "https://ak1.ostkcdn.com/img/mxc/070819-sp-beds-bmod-1.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "California King",
+      image:
+        "https://ak1.ostkcdn.com/images/products/9259607/Furniture-of-America-Perillean-Slatted-Transitional-Platform-Bed-dd29d3f6-0b3d-425f-afe3-3634283a1e6f_600.jpg?imWidth=320&impolicy=medium",
+    },
+  ];
+
+  var Design_1 = [
+    {
+      name: "Platform Beds",
+      image:
+        "https://ak1.ostkcdn.com/images/products/11037258/Wood-Mid-century-Platform-Style-Bed-863abf71-8d04-42ed-8400-68db24f1e002.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Twin XL",
+      image:
+        "https://ak1.ostkcdn.com/images/products/10735474/ZACK-Collection-Gray-Eco-leather-XL-Twin-Bed-by-Casabianca-Home-a061cf09-276f-4e43-a065-761b0e32be65.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Full / Double",
+      image:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/071b82f911cb96a94aa34de283e01e0a7b2657fb/VECELO-Full-Twin-size-Victorian-Metal-Platform-Bed.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Queen",
+      image:
+        "https://ak1.ostkcdn.com/images/products/14047250/Virgil-Upholstered-Tufted-Fabric-Queen-size-Bed-Set-by-Christopher-Knight-Home-2f191316-d798-4c20-8cdf-1f3b72b26d9c.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "King",
+      image:
+        "https://ak1.ostkcdn.com/img/mxc/070819-sp-beds-bmod-1.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "California King",
+      image:
+        "https://ak1.ostkcdn.com/images/products/9259607/Furniture-of-America-Perillean-Slatted-Transitional-Platform-Bed-dd29d3f6-0b3d-425f-afe3-3634283a1e6f_600.jpg?imWidth=320&impolicy=medium",
+    },
+  ];
+
+  var Feature_1 = [
+    {
+      name: "Platform Beds",
+      image:
+        "https://ak1.ostkcdn.com/images/products/11037258/Wood-Mid-century-Platform-Style-Bed-863abf71-8d04-42ed-8400-68db24f1e002.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Twin XL",
+      image:
+        "https://ak1.ostkcdn.com/images/products/10735474/ZACK-Collection-Gray-Eco-leather-XL-Twin-Bed-by-Casabianca-Home-a061cf09-276f-4e43-a065-761b0e32be65.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Full / Double",
+      image:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/071b82f911cb96a94aa34de283e01e0a7b2657fb/VECELO-Full-Twin-size-Victorian-Metal-Platform-Bed.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "Queen",
+      image:
+        "https://ak1.ostkcdn.com/images/products/14047250/Virgil-Upholstered-Tufted-Fabric-Queen-size-Bed-Set-by-Christopher-Knight-Home-2f191316-d798-4c20-8cdf-1f3b72b26d9c.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "King",
+      image:
+        "https://ak1.ostkcdn.com/img/mxc/070819-sp-beds-bmod-1.jpg?imWidth=320&impolicy=medium",
+    },
+    {
+      name: "California King",
+      image:
+        "https://ak1.ostkcdn.com/images/products/9259607/Furniture-of-America-Perillean-Slatted-Transitional-Platform-Bed-dd29d3f6-0b3d-425f-afe3-3634283a1e6f_600.jpg?imWidth=320&impolicy=medium",
+    },
+  ];
+
+  document.querySelector;
+  Size_1.map(function (item) {
+    var box = document.createElement("div");
+
+    var avtar = document.createElement("img");
+    avtar.setAttribute("src", item.image);
+
+    var title = document.createElement("p");
+    title.textContent = item.name;
+
+    box.append(avtar, title);
+
+    document.querySelector("#container1").append(box);
+  });
+
+  Design_1.map(function (item) {
+    var box = document.createElement("div");
+
+    var avtar = document.createElement("img");
+    avtar.setAttribute("src", item.image);
+
+    var title = document.createElement("p");
+    title.textContent = item.name;
+
+    box.append(avtar, title);
+
+    document.querySelector("#container2").append(box);
+  });
+
+  Feature_1.map(function (item) {
+    var box = document.createElement("div");
+
+    var avtar = document.createElement("img");
+    avtar.setAttribute("src", item.image);
+
+    var title = document.createElement("p");
+    title.textContent = item.name;
+
+    box.append(avtar, title);
+
+    document.querySelector("#container3").append(box);
+  });
+</script>

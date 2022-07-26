@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carts</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+    <div class="navigation">
+        <div><img
+                src="https://gumlet.assettype.com/afaqs%2F2021-01%2F15f5f827-8e29-4520-af8d-a0f353b8da17%2Fimages.png?auto=format&q=35&w=1200"
+                width="80px" height="50px"></div>
+        <div>MEN</div>
+        <div>WOMEN</div>
+        <div>KIDS</div>
+        <div>HOME&LIVING</div>
+        <div>BEAUTY</div>
+        <div>STUDIO</div>
+        <div><input type="search" placeholder="Search for Product,Brands and more" id="search"></div>
+        <div class="bag">
+            <div>Profile</div>
+            <div class="wishlist">WishList</div>
+            <div>Bag</div>
+        </div>
+
+       
+    
+    </div>
+    <div class="cartingHeading"></div>
+
+    <div class="cartContainer">
+
+    </div>
+    <div class="proceedToCheck">
+        Proceed To checkOut
+    </div>
+</body>
+</html>
+<script>
+    
+var cartItems = JSON.parse(localStorage.getItem("cartItem"))
+
+// var cartItem = JSON.parse(localStorage.getItem("mensData"));
+        // console.log(mensData);
+// showCartItems();
+
+        cartItems.map(function (data,index) {
+            var div = document.createElement("div");
+            //img,name,price,strikedoffprice
+
+            // image creation
+            var image = document.createElement("img");
+            image.setAttribute("src", data.image_url);
+
+            // name creation
+
+            var productname = document.createElement("p");
+            productname.textContent = data.name;
+
+            // price creation
+
+            var div2 = document.createElement("div");
+            div2.setAttribute("id", "flex");
+
+            var p1 = document.createElement("p");
+            p1.textContent = data.price;
+
+            var p2 = document.createElement("p");
+            p2.textContent = data.strikedoffprice;
+            // p2.style.textDecoration = "line-through";
+
+            var btn = document.createElement("button");
+            btn.textContent = "Remove";
+            btn.addEventListener("click",function(){
+                deleteCartItem(index);
+            })
+
+            div2.append(p1, p2,btn);
+
+
+            //append
+            div.append(image, productname, div2);
+
+            var cont = document.querySelector(".cartContainer");
+            cont.append(div);
+            
+        });
+
+var totalPrice = 0;
+var totalPRODUCTS = 0;
+ 
+// function showCartItems() {
+    for (let i = 0; i < cartItems.length; i++){
+        totalPrice += Number(cartItems[i].price);
+        totalPRODUCTS++;
+        // console.log(totalPrice)
+        // localStorage.setItem("totalPriceAmount",JSON.stringify(totalPrice))
+}
+// console.log(totalPrice)
+
+document.querySelector('.cartingHeading').textContent = `Total price Of all products in Cart Items is  ₹${totalPrice} @ ${ totalPRODUCTS } products}`;
+// }
+
+
+
+
+
+function deleteCartItem(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem("cartItem", JSON.stringify(cartItems));
+    location.href = "carts.html";
+}
+
+document.querySelector('.proceedToCheck').addEventListener('click', function () {
+    location.href = "billing.html"
+})
+</script>

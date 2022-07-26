@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 75%;
+            /* border: 1px solid black; */
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            /* grid-template-rows: repeat(5,100px); */
+            gap: 10px;
+            margin: auto;
+        }
+        #container > div{
+            /* border: 1px solid red; */
+            height: 400px;
+            margin-top: 20px;
+            
+        }
+        img{
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;            
+            /* margin-left: 10px; */
+
+        }
+        .title{
+            font-family: sans-serif;
+            color: grey;
+            margin-top: 5px;
+            margin-left: 2px;
+        }
+        .price{
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 30, 0);
+            margin-left: 2px;
+        }
+       
+        .discount{
+            margin-top: -7px;
+            font-size: 14px;
+            text-decoration: line-through;
+            margin-left: 2px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+</body>
+</html>
+
+<script>
+
+    var CI = JSON.parse(localStorage.getItem("carts"))
+
+    CI.map(function (item){
+        var box1 = document.createElement("div")
+
+        var image = document.createElement("img")
+        image.setAttribute("src",item.image_url)
+
+        var title = document.createElement("h5")
+        title.textContent = item.name
+        title.setAttribute("class","title")
+
+        var price = document.createElement("h3")
+        price.textContent = item.price
+        price.setAttribute("class","price")
+
+        var discount = document.createElement("p")
+        discount.textContent = item.strikedoffprice
+        discount.setAttribute("class","discount")
+
+        var button = document.createElement("button")
+        button.textContent = "Add to cart"
+        button.setAttribute("class","button")
+
+        box1.append(image, title, price, discount)
+
+        document.querySelector("#container").append(box1)
+    })
+</script>

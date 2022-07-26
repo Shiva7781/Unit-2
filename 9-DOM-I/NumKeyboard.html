@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Calculator</title>
+    <style>
+        #out {
+            border: 1px solid black;
+            width: 300px;
+            height: 70px;
+            margin: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 55px;
+            font-size: 30px;
+        }
+
+        #container {
+            margin: auto;
+            width: 300px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            grid-template-rows: repeat(4, 80px);
+            grid-gap: 10px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        button {
+            margin: 20px 0 0 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 17px;
+            border-radius: 5px;
+        }
+
+        .clear {
+            background-color: orange;
+        }
+
+        .BackSpace {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="out"></div>
+    <div id="container">
+        <button onclick="press(0)">0</button>
+        <button onclick="press(1)">1</button>
+        <button onclick="press(2)">2</button>
+        <button onclick="press(3)">3</button>
+        <button onclick="press(4)">4</button>
+        <button onclick="press(5)">5</button>
+        <button onclick="press(6)">6</button>
+        <button onclick="press(7)">7</button>
+        <button onclick="press(8)">8</button>
+        <button onclick="press(9)">9</button>
+        <button class="clear" onclick="clearAll()">Clear</button>
+        <button class="BackSpace" onclick="BackSpace()">⌫</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var out = ""
+
+    function press(num) {
+
+        out += num.toString()
+
+        // console.log(out);
+
+        document.querySelector("#out").textContent = out
+    }
+
+    function clearAll() {
+
+        out = ""
+
+        document.querySelector("#out").textContent = ""
+    }
+
+
+    function BackSpace() {
+
+        out = Math.floor(out / 10)
+
+        document.querySelector("#out").textContent = out
+    }
+</script>

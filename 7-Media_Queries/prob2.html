@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MQ Prob-2</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 400px 400px;
+      grid-gap: 20px;
+    }
+
+    #container>div {
+      background-color: teal;
+    }
+
+    /* small screen */
+    @media only screen and (max-width: 400px) {
+      #container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 200px)
+      }
+    }
+
+    /* medium screen */
+    @media only screen and (min-width: 401px) and (max-width: 820px) {
+      #container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 400px 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>

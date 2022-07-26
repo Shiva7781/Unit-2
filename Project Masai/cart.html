@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #cartcontainer {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgb(163, 146, 146);
+        margin-left: 12%;
+        width: 50%;
+        margin-top: 2%;
+      }
+      #cartcontainer img {
+        height: 60%;
+        padding-top: 5%;
+      }
+      #cartcontainer > div {
+        margin: 4%;
+        margin-bottom: -18%;
+      }
+      .shopping {
+        font-size: xx-large;
+        margin-left: 12%;
+        margin-top: 2%;
+      }
+      h5 {
+        color: red;
+        font-size: 20px;
+        padding-top: 0.1%;
+      }
+      h6 {
+        color: rgb(243, 61, 61);
+      }
+      #cartcontainer > h5 {
+        display: flex;
+      }
+      select {
+        width: 20%;
+        height: 5%;
+        margin-top: 0.1%;
+      }
+      p {
+        font-size: 20px;
+        margin-top: 2%;
+      }
+      h4 {
+        color: orange;
+        margin-top: 0.1%;
+      }
+      #maincartcontainer {
+          display: flex;
+      }
+      #cartcontainer2 {
+          display: flex;
+          width: 20%;
+          border: 1px solid rgb(163, 146, 146);
+          margin-top: 2%;
+          margin-bottom: 10%;
+          margin-left: 1%;
+      }
+      h5 {
+        margin-top: 0.1%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="shopping">Shopping Cart</div>
+
+    <div id="maincartcontainer">
+
+      <div id="cartcontainer"></div>
+        <div id="cartcontainer2"></div>
+      
+    </div>
+
+  </body>
+</html>
+
+<script>
+  var shopping = [
+    {
+      rating: " ★ ★ ★ ★ ☆ ",
+      price: "Sale Starts at INR",
+      rupee: 13273,
+      saving: "15% Savings",
+      name: "Sleep Sync Regatta Linen-upholstered 3-panel Platform Bed Frame",
+      image:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/61141aac4c39eb90e24011d5ddce0ac8ccc8efd6/Brookside-Tara-Square-Tufted-Upholstered-Platform-Bed.jpg?imwidth=480&impolicy=medium",
+    },
+  ];
+
+  shopping.map(function (item) {
+    var box1 = document.createElement("div");
+
+    var avtar = document.createElement("img");
+    avtar.setAttribute("src", item.image);
+
+    var box2 = document.createElement("div");
+
+    var title = document.createElement("p");
+    title.textContent = item.name;
+
+    var sale = document.createElement("div");
+
+    var price = document.createElement("h5");
+    price.textContent = item.price;
+
+    var rupee = document.createElement("h5");
+    rupee.textContent = item.rupee;
+
+    var rating = document.createElement("h4");
+    rating.textContent = item.rating;
+
+    var saving = document.createElement("h6");
+    saving.textContent = item.saving;
+
+    var sel = document.createElement("Select");
+
+    var opt = document.createElement("option");
+    opt.textContent = item.opt;
+
+    box1.append(avtar);
+
+    box2.append(title, rating, sale, saving, sel);
+    sale.append(price, rupee);
+
+    sel.append(opt);
+
+    document.querySelector("#cartcontainer").append(box1);
+    document.querySelector("#cartcontainer").append(box2);
+  });
+
+
+
+var box3 = document.createElement("div");
+
+var para1 = document.createElement("p");
+para1.textContent = "Subtotal After";
+
+var para2 = document.createElement("p");
+para2.textContent = "Discounts:";
+
+var para3 = document.createElement("p");
+para3.textContent = "Your Total:";
+
+box3.append(para1,para2,para3);
+
+
+
+var box4 = document.createElement("div");
+
+var para4 = document.createElement("p");
+para1.textContent = "INR";
+
+var para5 = document.createElement("p");
+para2.textContent = "12345";
+
+var para6 = document.createElement("p");
+para3.textContent = "INR 123456";
+
+box4.append(para4,para5,para6);
+
+document.querySelector("#cartcontainer2").append(box4);
+document.querySelector("#cartcontainer2").append(box3);
+
+</script>
