@@ -70,14 +70,6 @@
 // // ***********forEach won't return anything -- undefined***********
 // // ***********map will return an array***********
 
-var arr = ["1", "2", "3", "4"]
-
-arr.map(myNum)
-
-function myNum(elem) {
-    return Number(elem)
-}
-Number(elem)
 
 // ********************* filter *********************
 
