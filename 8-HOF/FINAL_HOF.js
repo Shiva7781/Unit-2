@@ -70,6 +70,15 @@
 // // ***********forEach won't return anything -- undefined***********
 // // ***********map will return an array***********
 
+var arr = ["1", "2", "3", "4"]
+
+function myNum(elem) {
+    return Number(elem)
+}
+
+var res = arr.map(myNum)
+console.log('res:', res)
+
 
 // ********************* filter *********************
 
